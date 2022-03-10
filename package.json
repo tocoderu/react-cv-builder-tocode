@@ -1,0 +1,38 @@
+{
+  "name": "cv-builder",
+  "description": "CV pdf builder with React.js and styled-component",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 version"
+  ],
+  "author": "https://github.com/vedees",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vedees/react-cv-builder-tocode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vedees/react-cv-builder-tocode/issues"
+  },
+  "keywords": [
+    "react",
+    "styled-component",
+    "scss",
+    "cv-builder",
+    "pdf-builder"
+  ],
+  "devDependencies": {
+    "react-scripts": "5.0.0",
+    "node-sass": "^7.0.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "uimini": "^2.0.7"
+  }
+}
