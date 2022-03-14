@@ -4,8 +4,12 @@ import './Footer.scss'
 
 const Footer = () => {
   return (
-    <footer>
-      <div className='ui-container'>footer</div>
+    <footer className='Footer'>
+      <div className='ui-container'>
+        <a className='ui-link' href='#' target='_blank'>
+          Github
+        </a>
+      </div>
     </footer>
   )
 }

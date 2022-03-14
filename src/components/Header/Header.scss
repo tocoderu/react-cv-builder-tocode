@@ -1,3 +1,14 @@
-header {
-  background-color: red;
+.Header {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.Header_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header_logo {
+  font-weight: 700;
 }
