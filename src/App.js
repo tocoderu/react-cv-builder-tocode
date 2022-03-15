@@ -1,8 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useReactToPrint } from 'react-to-print'
 
 // components:
-import { Header, Footer, Avatar, Title, Descr } from './components'
+import { Header, Footer, Avatar, Range, Title, Descr } from './components'
+
+// icons:
+import { ReactComponent as MailIcon } from './assets/icons/mail.svg'
+import { ReactComponent as PhoneIcon } from './assets/icons/phone.svg'
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -32,24 +37,31 @@ const Content = styled.div`
 `
 
 const App = () => {
-  const handleAvatarClick = () => console.log('avatar clicked')
-  const handlePrintClick = () => console.log('print button clicked')
+  const [skillsCounter, setSkillsCounter] = React.useState(1)
+  const [worksCounter, setWorksCounter] = React.useState(1)
+
+  const componentRef = React.useRef()
+  const handlePrintClick = useReactToPrint({
+    content: () => componentRef.current,
+  })
 
   return (
     <div className='ui-wrapper'>
       <Header onClick={handlePrintClick} />
       <div className='ui-content-wrapper'>
         <Wrapper>
-          <div className='ui-container'>
+          <div className='ui-container' ref={componentRef}>
             <Row itemsCenter>
-              <Avatar onClick={handleAvatarClick} />
-              <div>
+              <Sidebar>
+                <Avatar />
+              </Sidebar>
+              <Content>
                 <Title>Nick Gerner</Title>
                 <Descr>
                   Experienced Software & Machine Learning Engineer with a
                   demonstrated history.
                 </Descr>
-              </div>
+              </Content>
             </Row>
 
             <Row>
@@ -61,9 +73,13 @@ const App = () => {
                 <Descr isSecondary>Washington, DC | tocode.ru</Descr>
 
                 <Descr isPrimary style={{ marginTop: '2rem' }}>
+                  <MailIcon style={{ marginRight: '0.6rem' }} />
                   nick@gmail.com
                 </Descr>
-                <Descr isPrimary>+1 588-6500</Descr>
+                <Descr isPrimary>
+                  <PhoneIcon style={{ marginRight: '0.6rem' }} />
+                  +1 588-6500
+                </Descr>
               </Sidebar>
 
               <Content>
@@ -72,14 +88,32 @@ const App = () => {
                 </Title>
                 <Descr>Stanford University - BS Electrical Engineering</Descr>
 
-                <Title size='3' isUppercase style={{ marginTop: '3.6rem' }}>
+                <Title
+                  size='3'
+                  isUppercase
+                  isShowButton
+                  onClick={() => setWorksCounter(worksCounter + 1)}
+                  style={{ marginTop: '3.6rem' }}
+                >
                   Work experience:
                 </Title>
-                <Descr>Solutions Architect, Stripe.</Descr>
+                {new Array(worksCounter).fill(1).map((_, i) => (
+                  <Descr key={i}>{i + 1}. Solutions Architect, Stripe.</Descr>
+                ))}
 
-                <Title size='3' isUppercase style={{ marginTop: '3rem' }}>
+                <Title
+                  size='3'
+                  isUppercase
+                  isShowButton
+                  onClick={() => setSkillsCounter(skillsCounter + 1)}
+                  style={{ marginTop: '3rem' }}
+                >
                   Skills:
                 </Title>
+
+                {new Array(skillsCounter).fill(1).map((_, i) => (
+                  <Range key={i} />
+                ))}
               </Content>
             </Row>
           </div>
