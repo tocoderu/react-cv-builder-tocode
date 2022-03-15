@@ -11,7 +11,7 @@ const Footer = () => {
           href='https://github.com/vedees/react-cv-builder-tocode'
           target='_blank'
         >
-          Github
+          ✨ Github ✨
         </a>
       </div>
     </footer>

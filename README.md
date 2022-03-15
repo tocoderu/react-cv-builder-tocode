@@ -8,10 +8,14 @@
   </p>
   <p>
     <a href="https://www.youtube.com/playlist?list=PLkCrmfIT6LBQWN02hNj6r1daz7965GxsV" target="_blank">Youtube Russian guide</a>
-    | <a href="https://tocode.ru/donation/" target="_blank">Поддержать</a>
     | <a href="https://www.buymeacoffee.com/vedegis" target="_blank">Donate</a>
+    | <a href="https://tocode.ru/donation/" target="_blank">Поддержать</a>
   </p>
 </div>
+
+## Demo
+
+An interactive demo [is here](https://vedees.github.io/react-cv-builder-tocode/)
 
 ## Build Setup:
 
