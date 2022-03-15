@@ -6,7 +6,11 @@ const Footer = () => {
   return (
     <footer className='Footer'>
       <div className='ui-container'>
-        <a className='ui-link' href='#' target='_blank'>
+        <a
+          className='ui-link'
+          href='https://github.com/vedees/react-cv-builder-tocode'
+          target='_blank'
+        >
           Github
         </a>
       </div>
